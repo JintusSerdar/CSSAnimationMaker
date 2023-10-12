@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Alpha
+{% endblock %}
+
+{% block preview %}
+    {% if authenticated %}
+        {% for savedAnimation in savedAnimations %}
+            <li>
+                <span class="saveSpan" onclick="applyAnimation('preview{{savedAnimation.animationNumber}}')">Save {{savedAnimation.animationNumber}}</span>
+                <span class="deleteSpan" onclick="removeItem(event, {{savedAnimation.animationNumber}})">X</span>
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>
+             <span class="saveSpan" onclick="applyAnimation('preview1')">Save 1</span>
+             <span class="deleteSpan" onclick="removeItem(event, 1)">X</span>
+        </li>
+        <li>
+            <span class="saveSpan" onclick="applyAnimation('preview2')">Save 2</span>
+            <span class="deleteSpan" onclick="removeItem(event, 2)">X</span>
+        </li>
+        <li>
+            <span class="saveSpan" onclick="applyAnimation('preview3')">Save 3</span>
+            <span class="deleteSpan" onclick="removeItem(event, 3)">X</span>
+        </li>
+        <li>
+            <span class="saveSpan" onclick="applyAnimation('preview4')">Save 4</span>
+            <span class="deleteSpan" onclick="removeItem(event, 4)">X</span>
+        </li>
+        <li>
+            <span class="saveSpan" onclick="applyAnimation('preview5')">Save 5</span>
+            <span class="deleteSpan" onclick="removeItem(event, 5)">X</span>
+        </li>
+    {% endif %}
+{% endblock %}
+
+
+{% block authentication %}
+    {% if authenticated %}
+        <a href="/logout" class="downloadButton">Logout</a>
+    {% else %}
+        <a href="/authentication" class="downloadButton">Login/Register</a>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+    isAuthenticated = {{ authenticated|tojson|lower }};
+    {% if authenticated %}
+        {% for savedAnimation in savedAnimations %}
+            savedAnimations['preview{{ savedAnimation.animationNumber }}'] = {{ savedAnimation|tojson }};
+            newSave = { number: {{ savedAnimation.animationNumber }}, name: `Save {{ savedAnimation.animationNumber }}` };
+            saves.push(newSave);
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+
+

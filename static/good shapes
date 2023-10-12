@@ -1,0 +1,7 @@
+--width: 100px; --height: 21px; --shadowPixelY: 0px; --shadowPixelX: 0px; --transformOriginX: 186px; --rotateDegree: 138deg; --animationSpeed: 10s; --animationDelay: 9.25s; --borderPixel: 3px; --borderRadius: 0%;
+
+--transformOriginX: 98.5px; --shadowPixelX: 100px; --shadowPixelY: 100px; --rotateDegree: 111deg; --animationDelay: 0.5s; --spanHeight: 11px; --spanWidth: 11px; --boxWidth: 300px; --boxHeight: 244px;
+
+--spanShade: 23px; --spanWidth: 75px; --spanHeight: 10px; --shadowPixelX: 100px; --shadowPixelY: 20px; --animationSpeed: 10s; --animationDelay: 2.25s; --rotateDegree: 60deg; --transformOriginX: 4.5px; --boxHeight: 0px; --boxWidth: 0px; --borderPixel: 4px;
+
+--transformOriginX: 98.5px; --shadowPixelX: 100px; --shadowPixelY: 100px; --rotateDegree: 68deg; --animationDelay: 0.5s; --spanHeight: 11px; --spanWidth: 11px; --boxWidth: 0px; --boxHeight: 0px; --borderRadius: 50%; --spanShade: 20px;

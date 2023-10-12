@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Maker: {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/defaultAnimationSettings.css">
+    <link rel="stylesheet" href="../static/elements.css">
+     <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="preview-container">
+            <div class="preview-box">
+                <button type="button" onclick="addItem()">Save</button>
+                <ul>
+                    {% block preview %}{% endblock %}
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="visual-container">
+            <div class="animationBox">
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+                <span style="--i:4;"></span>
+                <span style="--i:5;"></span>
+                <span style="--i:6;"></span>
+                <span style="--i:7;"></span>
+                <span style="--i:8;"></span>
+                <span style="--i:9;"></span>
+                <span style="--i:10;"></span>
+            </div>
+        </div>
+
+        <div class="settings-container">
+            <div class="settings-box">
+                <label for="backgroundColor">Background Color:</label>
+                <input type="color" id="backgroundColor" value="#18001F">
+
+                <label for="spanColor">Span Color:</label>
+                <input type="color" id="spanColor" value="#00efff">
+
+                <label for="shadowPixelX">Shadow Pixel X:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="shadowPixelX" min="0" max="100" value="30">
+                    <span id="shadowPixelXValue" class="rangeValue">30</span>
+                </div>
+
+                <label for="shadowPixelY">Shadow Pixel Y:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="shadowPixelY" min="0" max="100" value="30">
+                    <span id="shadowPixelYValue" class="rangeValue">30</span>
+                </div>
+
+                <label for="spanWidth">Span Width:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="spanWidth" min="0" max="100" value="25">
+                    <span id="spanWidthValue" class="rangeValue">25</span>
+                </div>
+
+                <label for="spanHeight">Span Height:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="spanHeight" min="0" max="100" value="25">
+                    <span id="spanHeightValue" class="rangeValue">25</span>
+                </div>
+
+                <label for="spanShade">Span Shade:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="spanShade" min="0" max="100" value="20">
+                    <span id="spanShadeValue" class="rangeValue">20</span>
+                </div>
+
+                <label for="boxWidth">Box Width:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="boxWidth" min="0" max="300" value="300">
+                    <span id="boxWidthValue" class="rangeValue">300</span>
+                </div>
+
+                <label for="boxHeight">Box Height:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="boxHeight" min="0" max="300" value="300">
+                    <span id="boxHeightValue" class="rangeValue">300</span>
+                </div>
+
+                <label for="borderRadius">Border Radius:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="borderRadius" min="0" max="50" value="50">
+                    <span id="borderRadiusValue" class="rangeValue">50</span>
+                </div>
+
+                <label for="transformOriginX">Transform Origin X:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="transformOriginX" min="-300" max="300" step="0.5" value="12.5">
+                    <span id="transformOriginXValue" class="rangeValue">12.5</span>
+                </div>
+
+                <label for="transformOriginY">Transform Origin Y:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="transformOriginY" min="-300" max="300" step="0.5" value="12.5">
+                    <span id="transformOriginYValue" class="rangeValue">12.5</span>
+                </div>
+
+                <label for="rotateDegree">Rotate Degree:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="rotateDegree" min="0" max="360" value="36">
+                    <span id="rotateDegreeValue" class="rangeValue">36</span>
+                </div>
+
+                <label for="borderPixel">Border Pixel:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="borderPixel" min="0" max="100" value="4">
+                    <span id="borderPixelValue" class="rangeValue">4</span>
+                </div>
+
+                <label for="animationDelay">Animation Delay:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="animationDelay" min="0" max="10" step="0.25" value="0.25">
+                    <span id="animationDelayValue" class="rangeValue">0.25</span>
+                </div>
+
+                <label for="animationSpeed">Animation Speed:</label>
+                <div class="range-container">
+                    <input type="range" class="range" id="animationSpeed" min="0" max="10" step="0.25" value="10">
+                    <span id="animationSpeedValue" class="rangeValue">10</span>
+                </div>
+
+                <label for="numberOfSpans">Number of Spans:</label>
+                <div class="numberOfSpans-container">
+                    <input id="numberOfSpans" value="10">
+                    <button id="updateSpansButton">Update</button>
+                    <button id="addSpanButton">Add</button>
+                    <button id="removeSpanButton">Remove</button>
+                </div>
+
+                <div class="downloads">
+                    <button id="downloadCSS" class="downloadButton">Download CSS</button>
+                    <button id="downloadHTML" class="downloadButton">Download HTML</button>
+                    {% block authentication %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <button id="settingsToggle" class="menu-closed">Settings</button>
+        <button id="previewToggle" class="menu-closed">Saves</button>
+    </div>
+
+    <footer><p>&copy; 2023 Serdar Akin</p></footer>
+
+    <script>
+        const savedAnimations = {};
+        const saves = [];
+        let newSave = {};
+        let isAuthenticated = false;
+        {% block script %}{% endblock %}
+
+        const settingsToggle = document.getElementById('settingsToggle');
+        const settingsBox = document.querySelector('.settings-box');
+
+        settingsToggle.addEventListener('click', () => {
+            settingsBox.classList.toggle('menu-open');
+            settingsBox.classList.toggle('menu-closed');
+        });
+
+        // Initially, set the menu to closed state
+        settingsBox.classList.add('menu-open');
+
+        const previewToggle = document.getElementById('previewToggle');
+        const previewBox = document.querySelector('.preview-box');
+
+        previewToggle.addEventListener('click', () => {
+            previewBox.classList.toggle('menu-open');
+            previewBox.classList.toggle('menu-closed');
+        });
+
+        // Initially, set the menu to closed state
+        previewBox.classList.add('menu-open');
+    </script>
+    <script src="../static/loadAnimations.js"></script>
+    <script src="../static/animationSettings.js"></script>
+    <script src="../static/downloadCSS.js"></script>
+    <script src="../static/downloadHTML.js"></script>
+    <script src="../static/preview.js"></script>
+    <script src="../static/saveAnimation.js"></script>
+    <script src="../static/sampleAnimations.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="../static/authentication.css">
+    <link rel="stylesheet" href="../static/authenticationAnimation.css">
+</head>
+<body>
+
+    <div class="box">
+
+        <!--------------- Switch --------------->
+        <div class="switch">
+            <a class="login" onclick="login()">Login</a>
+            <a class="register" onclick="register()">Register</a>
+            <div class="btn-active" id="btn"></div>
+        </div>
+
+        <!--------------- Login Section --------------->
+        <div class="position-container">
+            <div class="login-box" id="login">
+                <form action="/login" method="post">
+                    <div class="top-header">
+                        <h3>Hello, Again</h3>
+                        <small>We are happy to have you back</small>
+                    </div>
+                        <div class="input-field">
+                            <span class="icon"><ion-icon name="person"></ion-icon></span>
+                            <input type="text" id="loginUsername" name="loginUsername" required>
+                            <label for="loginUsername">Username</label>
+                        </div>
+                        <div class="input-field">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" id="loginPassword" name="loginPassword" required>
+                            <label for="loginPassword">Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox" name="rememberUser"> Remember me</label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit">Login</button>
+                        <div class="guest">
+                            <a href="/">or continue as guest</a>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+        <!--------------- Register Section --------------->
+        <div class="position-container">
+            <div class="register-box" id="register">
+                <form action="/register" method="post">
+                    <div class="top-header">
+                        <h3>Register Now</h3>
+                        <small>We are happy to have you with us</small>
+                    </div>
+                    <div class="input-field">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="registerEmail" name="registerEmail" required>
+                        <label for="registerEmail">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" id="registerUsername" name="registerUsername" required>
+                        <label for="registerUsername">Username</label>
+                    </div>
+                    <div class="input-field">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="registerPassword" name="registerPassword" required>
+                        <label for="registerPassword">Password</label>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="animation-container">
+        <div class="animationBox">
+            <span style="--i: 1;"></span>
+			<span style="--i: 2;"></span>
+			<span style="--i: 3;"></span>
+			<span style="--i: 4;"></span>
+			<span style="--i: 5;"></span>
+			<span style="--i: 6;"></span>
+			<span style="--i: 7;"></span>
+			<span style="--i: 8;"></span>
+			<span style="--i: 9;"></span>
+			<span style="--i: 10;"></span>
+			<span style="--i: 11;"></span>
+			<span style="--i: 12;"></span>
+			<span style="--i: 13;"></span>
+			<span style="--i: 14;"></span>
+			<span style="--i: 15;"></span>
+			<span style="--i: 16;"></span>
+			<span style="--i: 17;"></span>
+			<span style="--i: 18;"></span>
+			<span style="--i: 19;"></span>
+			<span style="--i: 20;"></span>
+			<span style="--i: 21;"></span>
+			<span style="--i: 22;"></span>
+			<span style="--i: 23;"></span>
+			<span style="--i: 24;"></span>
+			<span style="--i: 25;"></span>
+			<span style="--i: 26;"></span>
+			<span style="--i: 27;"></span>
+			<span style="--i: 28;"></span>
+			<span style="--i: 29;"></span>
+			<span style="--i: 30;"></span>
+			<span style="--i: 31;"></span>
+			<span style="--i: 32;"></span>
+			<span style="--i: 33;"></span>
+			<span style="--i: 34;"></span>
+			<span style="--i: 35;"></span>
+			<span style="--i: 36;"></span>
+			<span style="--i: 37;"></span>
+			<span style="--i: 38;"></span>
+			<span style="--i: 39;"></span>
+			<span style="--i: 40;"></span>
+			<span style="--i: 41;"></span>
+			<span style="--i: 42;"></span>
+			<span style="--i: 43;"></span>
+			<span style="--i: 44;"></span>
+			<span style="--i: 45;"></span>
+			<span style="--i: 46;"></span>
+			<span style="--i: 47;"></span>
+			<span style="--i: 48;"></span>
+			<span style="--i: 49;"></span>
+			<span style="--i: 50;"></span>
+			<span style="--i: 51;"></span>
+			<span style="--i: 52;"></span>
+			<span style="--i: 53;"></span>
+			<span style="--i: 54;"></span>
+			<span style="--i: 55;"></span>
+			<span style="--i: 56;"></span>
+			<span style="--i: 57;"></span>
+			<span style="--i: 58;"></span>
+			<span style="--i: 59;"></span>
+			<span style="--i: 60;"></span>
+			<span style="--i: 61;"></span>
+			<span style="--i: 62;"></span>
+			<span style="--i: 63;"></span>
+			<span style="--i: 64;"></span>
+			<span style="--i: 65;"></span>
+			<span style="--i: 66;"></span>
+			<span style="--i: 67;"></span>
+			<span style="--i: 68;"></span>
+			<span style="--i: 69;"></span>
+			<span style="--i: 70;"></span>
+			<span style="--i: 71;"></span>
+			<span style="--i: 72;"></span>
+			<span style="--i: 73;"></span>
+			<span style="--i: 74;"></span>
+			<span style="--i: 75;"></span>
+			<span style="--i: 76;"></span>
+			<span style="--i: 77;"></span>
+			<span style="--i: 78;"></span>
+			<span style="--i: 79;"></span>
+			<span style="--i: 80;"></span>
+			<span style="--i: 81;"></span>
+			<span style="--i: 82;"></span>
+			<span style="--i: 83;"></span>
+			<span style="--i: 84;"></span>
+			<span style="--i: 85;"></span>
+			<span style="--i: 86;"></span>
+			<span style="--i: 87;"></span>
+			<span style="--i: 88;"></span>
+			<span style="--i: 89;"></span>
+			<span style="--i: 90;"></span>
+			<span style="--i: 91;"></span>
+			<span style="--i: 92;"></span>
+			<span style="--i: 93;"></span>
+			<span style="--i: 94;"></span>
+			<span style="--i: 95;"></span>
+			<span style="--i: 96;"></span>
+			<span style="--i: 97;"></span>
+			<span style="--i: 98;"></span>
+			<span style="--i: 99;"></span>
+			<span style="--i: 100;"></span>
+			<span style="--i: 101;"></span>
+			<span style="--i: 102;"></span>
+			<span style="--i: 103;"></span>
+			<span style="--i: 104;"></span>
+			<span style="--i: 105;"></span>
+			<span style="--i: 106;"></span>
+			<span style="--i: 107;"></span>
+			<span style="--i: 108;"></span>
+			<span style="--i: 109;"></span>
+			<span style="--i: 110;"></span>
+			<span style="--i: 111;"></span>
+			<span style="--i: 112;"></span>
+			<span style="--i: 113;"></span>
+			<span style="--i: 114;"></span>
+			<span style="--i: 115;"></span>
+			<span style="--i: 116;"></span>
+			<span style="--i: 117;"></span>
+			<span style="--i: 118;"></span>
+			<span style="--i: 119;"></span>
+			<span style="--i: 120;"></span>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+
+        let log = document.getElementById('login');
+        let reg = document.getElementById('register');
+        let btn = document.getElementById('btn');
+
+        function login(){
+            log.style.right = "0";
+            reg.style.right = "-120%";
+            btn.style.left = "0";
+            document.documentElement.style.setProperty('--transformOriginY', '-16.5px');
+            document.documentElement.style.setProperty('--rotateDegree', '129deg');
+        }
+        function register(){
+            log.style.right = "120%";
+            reg.style.right = "0";
+            btn.style.left = "50%";
+            document.documentElement.style.setProperty('--transformOriginY', '300px');
+            document.documentElement.style.setProperty('--rotateDegree', '222deg');
+        }
+
+
+        const emailInput = document.querySelector('input[type="email"]');
+        const emailLabel = document.querySelector('label[for="registerEmail"]');
+
+        emailInput.addEventListener('focus', () => {
+            emailLabel.classList.add('focused');
+        });
+
+        emailInput.addEventListener('blur', () => {
+            if (emailInput.value === '') {
+                emailLabel.classList.remove('focused');
+            }
+        });
+
+        emailInput.addEventListener('input', () => {
+            if (emailInput.value !== '') {
+                emailLabel.classList.add('focused');
+            } else {
+                emailLabel.classList.remove('focused');
+            }
+        });
+    </script>
+</body>
+</html>
