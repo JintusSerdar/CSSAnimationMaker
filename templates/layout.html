@@ -37,6 +37,14 @@
                 <span style="--i:8;"></span>
                 <span style="--i:9;"></span>
                 <span style="--i:10;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:18;"></span>
             </div>
         </div>
 
@@ -46,17 +54,17 @@
                 <input type="color" id="backgroundColor" value="#18001F">
 
                 <label for="spanColor">Span Color:</label>
-                <input type="color" id="spanColor" value="#00efff">
+                <input type="color" id="spanColor" value="#0a05ff">
 
                 <label for="shadowPixelX">Shadow Pixel X:</label>
                 <div class="range-container">
-                    <input type="range" class="range" id="shadowPixelX" min="0" max="100" value="30">
+                    <input type="range" class="range" id="shadowPixelX" min="0" max="100" value="25">
                     <span id="shadowPixelXValue" class="rangeValue">30</span>
                 </div>
 
                 <label for="shadowPixelY">Shadow Pixel Y:</label>
                 <div class="range-container">
-                    <input type="range" class="range" id="shadowPixelY" min="0" max="100" value="30">
+                    <input type="range" class="range" id="shadowPixelY" min="0" max="100" value="25">
                     <span id="shadowPixelYValue" class="rangeValue">30</span>
                 </div>
 
@@ -80,13 +88,13 @@
 
                 <label for="boxWidth">Box Width:</label>
                 <div class="range-container">
-                    <input type="range" class="range" id="boxWidth" min="0" max="300" value="300">
+                    <input type="range" class="range" id="boxWidth" min="0" max="300" value="250">
                     <span id="boxWidthValue" class="rangeValue">300</span>
                 </div>
 
                 <label for="boxHeight">Box Height:</label>
                 <div class="range-container">
-                    <input type="range" class="range" id="boxHeight" min="0" max="300" value="300">
+                    <input type="range" class="range" id="boxHeight" min="0" max="300" value="250">
                     <span id="boxHeightValue" class="rangeValue">300</span>
                 </div>
 
@@ -111,7 +119,7 @@
                 <label for="rotateDegree">Rotate Degree:</label>
                 <div class="range-container">
                     <input type="range" class="range" id="rotateDegree" min="0" max="360" value="36">
-                    <span id="rotateDegreeValue" class="rangeValue">36</span>
+                    <span id="rotateDegreeValue" class="rangeValue">40</span>
                 </div>
 
                 <label for="borderPixel">Border Pixel:</label>
@@ -123,7 +131,7 @@
                 <label for="animationDelay">Animation Delay:</label>
                 <div class="range-container">
                     <input type="range" class="range" id="animationDelay" min="0" max="10" step="0.25" value="0.25">
-                    <span id="animationDelayValue" class="rangeValue">0.25</span>
+                    <span id="animationDelayValue" class="rangeValue">1.25</span>
                 </div>
 
                 <label for="animationSpeed">Animation Speed:</label>
@@ -134,7 +142,7 @@
 
                 <label for="numberOfSpans">Number of Spans:</label>
                 <div class="numberOfSpans-container">
-                    <input id="numberOfSpans" value="10">
+                    <input id="numberOfSpans" value="18">
                     <button id="updateSpansButton">Update</button>
                     <button id="addSpanButton">Add</button>
                     <button id="removeSpanButton">Remove</button>
@@ -151,7 +159,7 @@
         <button id="previewToggle" class="menu-closed">Saves</button>
     </div>
 
-    <footer><p>&copy; 2023 Serdar Akin</p></footer>
+<!--<footer><p>&copy; 2023 Serdar Akin</p></footer>-->
 
     <script>
         const savedAnimations = {};

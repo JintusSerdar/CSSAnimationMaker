@@ -1,15 +1,15 @@
 
 :root {
-    --animationDelay: 0.25s;
+    --animationDelay: 1.25s;
     --animationSpeed: 10s;
     --borderPixel: 4px;
     --borderRadius: 50%;
-    --boxHeight: 300px;
-    --boxWidth: 300px;
-    --rotateDegree: 36deg;
-    --shadowPixelX: 30px;
-    --shadowPixelY: 30px;
-    --spanColor: #00e9ff;
+    --boxHeight: 250px;
+    --boxWidth: 250px;
+    --rotateDegree: 40deg;
+    --shadowPixelX: 25px;
+    --shadowPixelY: 25px;
+    --spanColor: #0a05ff;
     --spanHeight: 25px;
     --spanShade: 20px;
     --spanWidth: 25px;
