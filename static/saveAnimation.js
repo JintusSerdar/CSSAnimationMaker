@@ -91,6 +91,8 @@ function applyAnimation(animationId) {
         document.getElementById('spanColor').value = savedAnimation.spanColor;
 
         // Update span count
+        document.getElementById('numberOfSpans').value = savedAnimation.spanCount;
+
         const animationBox = document.querySelector(".animationBox");
         const spans = animationBox.querySelectorAll("span");
 
