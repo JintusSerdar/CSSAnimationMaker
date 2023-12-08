@@ -96,8 +96,13 @@ def delete_animation():
 def index():
     authenticated = 'user_id' in session  # Check if 'user_id' exists in the session
     if authenticated:
+        user_id = session['user_id']
+
+        # Getting username
+        username = Users.query.filter_by(id=user_id).first().username.capitalize()
+
         # Assuming that savedAnimations is a list of animations for the currently authenticated user
-        savedAnimations = SavedAnimation.query.filter_by(userId=session['user_id']).all()
+        savedAnimations = SavedAnimation.query.filter_by(userId=user_id).all()
 
         # Convert SavedAnimation objects to dictionaries
         savedAnimations_dict = [
@@ -110,7 +115,7 @@ def index():
             for animation in savedAnimations
         ]
 
-        return render_template("index.html", savedAnimations=savedAnimations_dict, authenticated=authenticated)
+        return render_template("index.html", savedAnimations=savedAnimations_dict, authenticated=authenticated, username=username)
 
     return render_template("index.html", savedAnimations=None, authenticated=authenticated)
 
@@ -126,7 +131,7 @@ def login():
     session.clear()
 
     if request.method == 'POST':
-        username = request.form.get('loginUsername')
+        username = request.form.get('loginUsername').lower()
         password = request.form.get('loginPassword')
 
         if not username:
@@ -158,8 +163,8 @@ def register():
     session.clear()
 
     if request.method == 'POST':
-        username = request.form.get('registerUsername')
-        email = request.form.get('registerEmail')
+        username = request.form.get('registerUsername').lower()
+        email = request.form.get('registerEmail').lower()
         password = request.form.get('registerPassword')
         # confirmation = request.form.get("confirmation")
 

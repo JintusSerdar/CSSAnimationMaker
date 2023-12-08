@@ -50,6 +50,14 @@
 
         <div class="settings-container">
             <div class="settings-box">
+
+                <div class="hub">
+                    <a href="/" class="hubButton">Main Menu</a>
+                    {% block authentication %}{% endblock %}
+                </div>
+
+                <hr class="hub-separator">
+
                 <label for="backgroundColor">Background Color:</label>
                 <input type="color" id="backgroundColor" value="#18001F">
 
@@ -151,12 +159,16 @@
                 <div class="downloads">
                     <button id="downloadCSS" class="downloadButton">Download CSS</button>
                     <button id="downloadHTML" class="downloadButton">Download HTML</button>
-                    {% block authentication %}{% endblock %}
                 </div>
             </div>
         </div>
-        <button id="settingsToggle" class="menu-closed">Settings</button>
-        <button id="previewToggle" class="menu-closed">Saves</button>
+
+        <button class="toggle toggle-active" id="settingsToggle">
+            <span class="toggleLine"></span>
+            <span class="toggleLine"></span>
+            <span class="toggleLine"></span>
+        </button>
+        <button id="previewToggle">Saves</button>
     </div>
 
 <!--<footer><p>&copy; 2023 Serdar Akin</p></footer>-->
@@ -174,6 +186,7 @@
         settingsToggle.addEventListener('click', () => {
             settingsBox.classList.toggle('menu-open');
             settingsBox.classList.toggle('menu-closed');
+            settingsToggle.classList.toggle('toggle-active');
         });
 
         // Initially, set the menu to closed state
