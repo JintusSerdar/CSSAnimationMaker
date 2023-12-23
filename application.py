@@ -93,12 +93,12 @@ def delete_animation():
 
 
 @application.route("/")
-def authentication():
+def index():
     return render_template("index.html")
 
 
 @application.route("/app")
-def index():
+def app():
     authenticated = 'user_id' in session  # Check if 'user_id' exists in the session
     if authenticated:
         user_id = session['user_id']
