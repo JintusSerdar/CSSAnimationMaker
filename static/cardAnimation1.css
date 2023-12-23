@@ -1,0 +1,80 @@
+
+.cardAnimation1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+.cardAnimation1 {
+    --animationDelay: 1.5s;
+    --animationSpeed: 10s;
+    --borderPixel: 3px;
+    --borderRadius: 50%;
+    --boxHeight: 239px;
+    --boxWidth: 188px;
+    --rotateDegree: 153deg;
+    --shadowPixelX: 0px;
+    --shadowPixelY: 100px;
+    --spanColor: #00e9ff;
+    --spanHeight: 10px;
+    --spanShade: 12px;
+    --spanWidth: 10px;
+    --transformOriginX: 3px;
+    --transformOriginY: 118.5px;
+
+}
+
+.cardAnimation1 .animationBox {
+    position: relative;
+    width: var(--boxWidth);
+    height: var(--boxHeight);
+    scale: 0.35;
+}
+
+.cardAnimation1 .animationBox span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(var(--rotateDegree) * var(--i)));
+}
+
+.cardAnimation1 .animationBox span::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: var(--spanWidth);
+    height: var(--spanHeight);
+    background: transparent;
+    box-sizing: border-box;
+    border: var(--borderPixel) dotted var(--spanColor);
+    border-radius: var(--borderRadius);
+    box-shadow: 0 0 var(--spanShade) var(--spanColor),
+    calc(-1 * var(--shadowPixelX)) calc(-1 * var(--shadowPixelY)) 0 var(--spanColor),
+    calc(-1 * var(--shadowPixelX)) calc(-1 * var(--shadowPixelY)) var(--spanShade) var(--spanColor),
+    calc(-1 * var(--shadowPixelX)) var(--shadowPixelY) 0 var(--spanColor),
+    calc(-1 * var(--shadowPixelX)) var(--shadowPixelY) var(--spanShade) var(--spanColor),
+    var(--shadowPixelX) calc(-1 * var(--shadowPixelY)) 0 var(--spanColor),
+    var(--shadowPixelX) calc(-1 * var(--shadowPixelY)) var(--spanShade) var(--spanColor),
+    var(--shadowPixelX) var(--shadowPixelY) 0 var(--spanColor),
+    var(--shadowPixelX) var(--shadowPixelY) var(--spanShade) var(--spanColor);
+    animation: animate var(--animationSpeed) linear infinite;
+    animation-delay: calc(-1 * var(--animationDelay) * var(--i));
+    transform-origin: var(--transformOriginX) var(--transformOriginY);
+    transition: 2s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+            

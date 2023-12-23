@@ -1,61 +1,821 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapemate</title>
+    <link rel="icon" type="image/png" href="../static/images/headLogo.png">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/heroAnimation.css">
+    <link rel="stylesheet" href="../static/cardAnimation1.css">
+    <link rel="stylesheet" href="../static/cardAnimation2.css">
+    <link rel="stylesheet" href="../static/cardAnimation3.css">
+</head>
+<body>
 
-{% block title %}
-    Alpha
-{% endblock %}
+<header>
+    <div class="navLogo">
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">-->
+<!--            <g fill="none" fill-rule="evenodd">-->
+<!--                <circle cx="24" cy="24" r="24" fill="#FFF"/>-->
+<!--                <path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"/>-->
+<!--            </g>-->
+<!--        </svg>-->
+        <img src="../static/images/logo.png" width="100">
+        <div class="navLogoText">Shapemate</div>
+    </div>
 
-{% block preview %}
-    {% if authenticated %}
-        {% for savedAnimation in savedAnimations %}
+
+    <button class="navToggle" id="navToggle" aria-controls="nav" aria-expanded="false">
+        <span class="navToggleLine"></span>
+        <span class="navToggleLine"></span>
+        <span class="navToggleLine"></span>
+    </button>
+
+    <nav>
+        <ul class="nav" id="nav" data-visible="false">
             <li>
-                <span class="saveSpan" onclick="applyAnimation('preview{{savedAnimation.animationNumber}}')">Save {{savedAnimation.animationNumber}}</span>
-                <span class="deleteSpan" onclick="removeItem(event, {{savedAnimation.animationNumber}})">X</span>
+                <a href="#tryNow">
+                    <span aria-hidden="true">✶</span>
+                    Try Now
+                </a>
             </li>
-        {% endfor %}
-    {% else %}
-        <li>
-             <span class="saveSpan" onclick="applyAnimation('preview1')">Save 1</span>
-             <span class="deleteSpan" onclick="removeItem(event, 1)">X</span>
-        </li>
-        <li>
-            <span class="saveSpan" onclick="applyAnimation('preview2')">Save 2</span>
-            <span class="deleteSpan" onclick="removeItem(event, 2)">X</span>
-        </li>
-        <li>
-            <span class="saveSpan" onclick="applyAnimation('preview3')">Save 3</span>
-            <span class="deleteSpan" onclick="removeItem(event, 3)">X</span>
-        </li>
-        <li>
-            <span class="saveSpan" onclick="applyAnimation('preview4')">Save 4</span>
-            <span class="deleteSpan" onclick="removeItem(event, 4)">X</span>
-        </li>
-        <li>
-            <span class="saveSpan" onclick="applyAnimation('preview5')">Save 5</span>
-            <span class="deleteSpan" onclick="removeItem(event, 5)">X</span>
-        </li>
-    {% endif %}
-{% endblock %}
+            <li>
+                <a href="#about">
+                    <span aria-hidden="true">✶</span>
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="#userGuide">
+                    <span aria-hidden="true">✶</span>
+                    User Guide
+                </a>
+            </li>
+            <li>
+                <a href="#contact">
+                    <span aria-hidden="true">✶</span>
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
+<div class="heroAnimation">
+    <div class="animationBox">
+        <span style="--i: 1;"></span>
+        <span style="--i: 2;"></span>
+        <span style="--i: 3;"></span>
+        <span style="--i: 4;"></span>
+        <span style="--i: 5;"></span>
+        <span style="--i: 6;"></span>
+        <span style="--i: 7;"></span>
+        <span style="--i: 8;"></span>
+        <span style="--i: 9;"></span>
+        <span style="--i: 10;"></span>
+        <span style="--i: 11;"></span>
+        <span style="--i: 12;"></span>
+        <span style="--i: 13;"></span>
+        <span style="--i: 14;"></span>
+        <span style="--i: 15;"></span>
+        <span style="--i: 16;"></span>
+        <span style="--i: 17;"></span>
+        <span style="--i: 18;"></span>
+        <span style="--i: 19;"></span>
+        <span style="--i: 20;"></span>
+        <span style="--i: 21;"></span>
+        <span style="--i: 22;"></span>
+        <span style="--i: 23;"></span>
+        <span style="--i: 24;"></span>
+        <span style="--i: 25;"></span>
+        <span style="--i: 26;"></span>
+        <span style="--i: 27;"></span>
+        <span style="--i: 28;"></span>
+        <span style="--i: 29;"></span>
+        <span style="--i: 30;"></span>
+        <span style="--i: 31;"></span>
+        <span style="--i: 32;"></span>
+        <span style="--i: 33;"></span>
+        <span style="--i: 34;"></span>
+        <span style="--i: 35;"></span>
+        <span style="--i: 36;"></span>
+        <span style="--i: 37;"></span>
+        <span style="--i: 38;"></span>
+        <span style="--i: 39;"></span>
+        <span style="--i: 40;"></span>
+        <span style="--i: 41;"></span>
+        <span style="--i: 42;"></span>
+        <span style="--i: 43;"></span>
+        <span style="--i: 44;"></span>
+        <span style="--i: 45;"></span>
+        <span style="--i: 46;"></span>
+        <span style="--i: 47;"></span>
+        <span style="--i: 48;"></span>
+        <span style="--i: 49;"></span>
+        <span style="--i: 50;"></span>
+        <span style="--i: 51;"></span>
+        <span style="--i: 52;"></span>
+        <span style="--i: 53;"></span>
+        <span style="--i: 54;"></span>
+        <span style="--i: 55;"></span>
+        <span style="--i: 56;"></span>
+        <span style="--i: 57;"></span>
+        <span style="--i: 58;"></span>
+        <span style="--i: 59;"></span>
+        <span style="--i: 60;"></span>
+        <span style="--i: 61;"></span>
+        <span style="--i: 62;"></span>
+        <span style="--i: 63;"></span>
+        <span style="--i: 64;"></span>
+        <span style="--i: 65;"></span>
+        <span style="--i: 66;"></span>
+        <span style="--i: 67;"></span>
+        <span style="--i: 68;"></span>
+        <span style="--i: 69;"></span>
+        <span style="--i: 70;"></span>
+        <span style="--i: 71;"></span>
+        <span style="--i: 72;"></span>
+        <span style="--i: 73;"></span>
+        <span style="--i: 74;"></span>
+        <span style="--i: 75;"></span>
+        <span style="--i: 76;"></span>
+        <span style="--i: 77;"></span>
+        <span style="--i: 78;"></span>
+        <span style="--i: 79;"></span>
+        <span style="--i: 80;"></span>
+        <span style="--i: 81;"></span>
+        <span style="--i: 82;"></span>
+        <span style="--i: 83;"></span>
+        <span style="--i: 84;"></span>
+        <span style="--i: 85;"></span>
+        <span style="--i: 86;"></span>
+        <span style="--i: 87;"></span>
+        <span style="--i: 88;"></span>
+        <span style="--i: 89;"></span>
+        <span style="--i: 90;"></span>
+        <span style="--i: 91;"></span>
+        <span style="--i: 92;"></span>
+        <span style="--i: 93;"></span>
+        <span style="--i: 94;"></span>
+        <span style="--i: 95;"></span>
+        <span style="--i: 96;"></span>
+        <span style="--i: 97;"></span>
+        <span style="--i: 98;"></span>
+        <span style="--i: 99;"></span>
+        <span style="--i: 100;"></span>
+        <span style="--i: 101;"></span>
+        <span style="--i: 102;"></span>
+        <span style="--i: 103;"></span>
+        <span style="--i: 104;"></span>
+        <span style="--i: 105;"></span>
+        <span style="--i: 106;"></span>
+        <span style="--i: 107;"></span>
+        <span style="--i: 108;"></span>
+        <span style="--i: 109;"></span>
+        <span style="--i: 110;"></span>
+        <span style="--i: 111;"></span>
+        <span style="--i: 112;"></span>
+        <span style="--i: 113;"></span>
+        <span style="--i: 114;"></span>
+        <span style="--i: 115;"></span>
+        <span style="--i: 116;"></span>
+        <span style="--i: 117;"></span>
+        <span style="--i: 118;"></span>
+        <span style="--i: 119;"></span>
+        <span style="--i: 120;"></span>
+    </div>
+</div>
 
-{% block authentication %}
-    {% if authenticated %}
-        <a href="/" class="hubButton">Welcome {{ username }}</a>
-        <a href="/logout" class="hubButton">Logout</a>
-    {% else %}
-        <a href="/authentication" class="hubButton">Login/Register</a>
-    {% endif %}
-{% endblock %}
+<div class="hero">
+    <h1 class="heroTitle">
+        <em>CSS</em>
+        Only
+    </h1>
+    <button id="tryNow" class="tryNow">
+        Try Now!
+    </button>
+</div>
 
-{% block script %}
-    isAuthenticated = {{ authenticated|tojson|lower }};
-    {% if authenticated %}
-        {% for savedAnimation in savedAnimations %}
-            savedAnimations['preview{{ savedAnimation.animationNumber }}'] = {{ savedAnimation|tojson }};
-            newSave = { number: {{ savedAnimation.animationNumber }}, name: `Save {{ savedAnimation.animationNumber }}` };
-            saves.push(newSave);
-        {% endfor %}
-    {% endif %}
-{% endblock %}
+<div id="about" class="about">
 
+    <div class="aboutMain">
+        <p>
+            Welcome to Shapemate, a powerful visual application that empowers you to craft stunning animations using only CSS. Unleash your creativity by effortlessly manipulating settings to create shapes that surpass expectations.
+        </p>
+    </div>
 
+    <div class="aboutCards">
+        <div class="card">
+            <div class="cardBanner banner1">
+                <div class="cardContent">
+                    Create simple
+                    <em>Planets</em>
+                </div>
+            </div>
 
+            <div class="cardAnimation1">
+                <div class="animationBox">
+                    <span style="--i: 1;"></span>
+                    <span style="--i: 2;"></span>
+                    <span style="--i: 3;"></span>
+                    <span style="--i: 4;"></span>
+                    <span style="--i: 5;"></span>
+                    <span style="--i: 6;"></span>
+                    <span style="--i: 7;"></span>
+                    <span style="--i: 8;"></span>
+                    <span style="--i: 9;"></span>
+                    <span style="--i: 10;"></span>
+                    <span style="--i: 11;"></span>
+                    <span style="--i: 12;"></span>
+                    <span style="--i: 13;"></span>
+                    <span style="--i: 14;"></span>
+                    <span style="--i: 15;"></span>
+                    <span style="--i: 16;"></span>
+                    <span style="--i: 17;"></span>
+                    <span style="--i: 18;"></span>
+                    <span style="--i: 19;"></span>
+                    <span style="--i: 20;"></span>
+                    <span style="--i: 21;"></span>
+                    <span style="--i: 22;"></span>
+                    <span style="--i: 23;"></span>
+                    <span style="--i: 24;"></span>
+                    <span style="--i: 25;"></span>
+                    <span style="--i: 26;"></span>
+                    <span style="--i: 27;"></span>
+                    <span style="--i: 28;"></span>
+                    <span style="--i: 29;"></span>
+                    <span style="--i: 30;"></span>
+                    <span style="--i: 31;"></span>
+                    <span style="--i: 32;"></span>
+                    <span style="--i: 33;"></span>
+                    <span style="--i: 34;"></span>
+                    <span style="--i: 35;"></span>
+                    <span style="--i: 36;"></span>
+                    <span style="--i: 37;"></span>
+                    <span style="--i: 38;"></span>
+                    <span style="--i: 39;"></span>
+                    <span style="--i: 40;"></span>
+                    <span style="--i: 41;"></span>
+                    <span style="--i: 42;"></span>
+                    <span style="--i: 43;"></span>
+                    <span style="--i: 44;"></span>
+                    <span style="--i: 45;"></span>
+                    <span style="--i: 46;"></span>
+                    <span style="--i: 47;"></span>
+                    <span style="--i: 48;"></span>
+                    <span style="--i: 49;"></span>
+                    <span style="--i: 50;"></span>
+                    <span style="--i: 51;"></span>
+                    <span style="--i: 52;"></span>
+                    <span style="--i: 53;"></span>
+                    <span style="--i: 54;"></span>
+                    <span style="--i: 55;"></span>
+                    <span style="--i: 56;"></span>
+                    <span style="--i: 57;"></span>
+                    <span style="--i: 58;"></span>
+                    <span style="--i: 59;"></span>
+                    <span style="--i: 60;"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+        <div class="cardBanner banner2">
+            <div class="cardContent">
+                Form complex
+                <em>Galaxies</em>
+            </div>
+        </div>
+
+        <div class="cardAnimation2">
+            <div class="animationBox">
+                <span style="--i: 1;"></span>
+                <span style="--i: 2;"></span>
+                <span style="--i: 3;"></span>
+                <span style="--i: 4;"></span>
+                <span style="--i: 5;"></span>
+                <span style="--i: 6;"></span>
+                <span style="--i: 7;"></span>
+                <span style="--i: 8;"></span>
+                <span style="--i: 9;"></span>
+                <span style="--i: 10;"></span>
+                <span style="--i: 11;"></span>
+                <span style="--i: 12;"></span>
+                <span style="--i: 13;"></span>
+                <span style="--i: 14;"></span>
+                <span style="--i: 15;"></span>
+                <span style="--i: 16;"></span>
+                <span style="--i: 17;"></span>
+                <span style="--i: 18;"></span>
+                <span style="--i: 19;"></span>
+                <span style="--i: 20;"></span>
+                <span style="--i: 21;"></span>
+                <span style="--i: 22;"></span>
+                <span style="--i: 23;"></span>
+                <span style="--i: 24;"></span>
+                <span style="--i: 25;"></span>
+                <span style="--i: 26;"></span>
+                <span style="--i: 27;"></span>
+                <span style="--i: 28;"></span>
+                <span style="--i: 29;"></span>
+                <span style="--i: 30;"></span>
+                <span style="--i: 31;"></span>
+                <span style="--i: 32;"></span>
+                <span style="--i: 33;"></span>
+                <span style="--i: 34;"></span>
+                <span style="--i: 35;"></span>
+                <span style="--i: 36;"></span>
+                <span style="--i: 37;"></span>
+                <span style="--i: 38;"></span>
+                <span style="--i: 39;"></span>
+                <span style="--i: 40;"></span>
+                <span style="--i: 41;"></span>
+                <span style="--i: 42;"></span>
+                <span style="--i: 43;"></span>
+                <span style="--i: 44;"></span>
+                <span style="--i: 45;"></span>
+                <span style="--i: 46;"></span>
+                <span style="--i: 47;"></span>
+                <span style="--i: 48;"></span>
+                <span style="--i: 49;"></span>
+                <span style="--i: 50;"></span>
+                <span style="--i: 51;"></span>
+                <span style="--i: 52;"></span>
+                <span style="--i: 53;"></span>
+                <span style="--i: 54;"></span>
+                <span style="--i: 55;"></span>
+                <span style="--i: 56;"></span>
+                <span style="--i: 57;"></span>
+                <span style="--i: 58;"></span>
+                <span style="--i: 59;"></span>
+                <span style="--i: 60;"></span>
+                <span style="--i: 61;"></span>
+                <span style="--i: 62;"></span>
+                <span style="--i: 63;"></span>
+                <span style="--i: 64;"></span>
+                <span style="--i: 65;"></span>
+                <span style="--i: 66;"></span>
+                <span style="--i: 67;"></span>
+                <span style="--i: 68;"></span>
+                <span style="--i: 69;"></span>
+                <span style="--i: 70;"></span>
+                <span style="--i: 71;"></span>
+                <span style="--i: 72;"></span>
+                <span style="--i: 73;"></span>
+                <span style="--i: 74;"></span>
+                <span style="--i: 75;"></span>
+                <span style="--i: 76;"></span>
+                <span style="--i: 77;"></span>
+                <span style="--i: 78;"></span>
+                <span style="--i: 79;"></span>
+                <span style="--i: 80;"></span>
+                <span style="--i: 81;"></span>
+                <span style="--i: 82;"></span>
+                <span style="--i: 83;"></span>
+                <span style="--i: 84;"></span>
+                <span style="--i: 85;"></span>
+                <span style="--i: 86;"></span>
+                <span style="--i: 87;"></span>
+                <span style="--i: 88;"></span>
+                <span style="--i: 89;"></span>
+                <span style="--i: 90;"></span>
+                <span style="--i: 91;"></span>
+                <span style="--i: 92;"></span>
+                <span style="--i: 93;"></span>
+                <span style="--i: 94;"></span>
+                <span style="--i: 95;"></span>
+                <span style="--i: 96;"></span>
+                <span style="--i: 97;"></span>
+                <span style="--i: 98;"></span>
+                <span style="--i: 99;"></span>
+                <span style="--i: 100;"></span>
+                <span style="--i: 101;"></span>
+                <span style="--i: 102;"></span>
+                <span style="--i: 103;"></span>
+                <span style="--i: 104;"></span>
+                <span style="--i: 105;"></span>
+                <span style="--i: 106;"></span>
+                <span style="--i: 107;"></span>
+                <span style="--i: 108;"></span>
+                <span style="--i: 109;"></span>
+                <span style="--i: 110;"></span>
+                <span style="--i: 111;"></span>
+                <span style="--i: 112;"></span>
+                <span style="--i: 113;"></span>
+                <span style="--i: 114;"></span>
+                <span style="--i: 115;"></span>
+                <span style="--i: 116;"></span>
+                <span style="--i: 117;"></span>
+                <span style="--i: 118;"></span>
+                <span style="--i: 119;"></span>
+                <span style="--i: 120;"></span>
+                <span style="--i: 121;"></span>
+                <span style="--i: 122;"></span>
+                <span style="--i: 123;"></span>
+                <span style="--i: 124;"></span>
+                <span style="--i: 125;"></span>
+                <span style="--i: 126;"></span>
+                <span style="--i: 127;"></span>
+                <span style="--i: 128;"></span>
+                <span style="--i: 129;"></span>
+                <span style="--i: 130;"></span>
+                <span style="--i: 131;"></span>
+                <span style="--i: 132;"></span>
+                <span style="--i: 133;"></span>
+                <span style="--i: 134;"></span>
+                <span style="--i: 135;"></span>
+                <span style="--i: 136;"></span>
+                <span style="--i: 137;"></span>
+                <span style="--i: 138;"></span>
+                <span style="--i: 139;"></span>
+                <span style="--i: 140;"></span>
+                <span style="--i: 141;"></span>
+                <span style="--i: 142;"></span>
+                <span style="--i: 143;"></span>
+                <span style="--i: 144;"></span>
+                <span style="--i: 145;"></span>
+                <span style="--i: 146;"></span>
+                <span style="--i: 147;"></span>
+                <span style="--i: 148;"></span>
+                <span style="--i: 149;"></span>
+                <span style="--i: 150;"></span>
+                <span style="--i: 151;"></span>
+                <span style="--i: 152;"></span>
+                <span style="--i: 153;"></span>
+                <span style="--i: 154;"></span>
+                <span style="--i: 155;"></span>
+                <span style="--i: 156;"></span>
+                <span style="--i: 157;"></span>
+                <span style="--i: 158;"></span>
+                <span style="--i: 159;"></span>
+                <span style="--i: 160;"></span>
+                <span style="--i: 161;"></span>
+                <span style="--i: 162;"></span>
+                <span style="--i: 163;"></span>
+                <span style="--i: 164;"></span>
+                <span style="--i: 165;"></span>
+                <span style="--i: 166;"></span>
+                <span style="--i: 167;"></span>
+                <span style="--i: 168;"></span>
+                <span style="--i: 169;"></span>
+                <span style="--i: 170;"></span>
+                <span style="--i: 171;"></span>
+                <span style="--i: 172;"></span>
+                <span style="--i: 173;"></span>
+                <span style="--i: 174;"></span>
+                <span style="--i: 175;"></span>
+                <span style="--i: 176;"></span>
+                <span style="--i: 177;"></span>
+                <span style="--i: 178;"></span>
+                <span style="--i: 179;"></span>
+                <span style="--i: 180;"></span>
+            </div>
+        </div>
+    </div>
+
+        <div class="card">
+            <div class="cardBanner banner3">
+                <div class="cardContent">
+                    Use your favorite
+                    <em>Icons</em>
+                </div>
+            </div>
+
+            <div class="cardAnimation3">
+                <div class="animationBox">
+                    <span style="--i: 1;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 2;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 3;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 4;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 5;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 6;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 7;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 8;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 9;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 10;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 11;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 12;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 13;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 14;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 15;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 16;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 17;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 18;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 19;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 20;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 21;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 22;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 23;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 24;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 25;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 26;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 27;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 28;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 29;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 30;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 31;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 32;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 33;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 34;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 35;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 36;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 37;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 38;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 39;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 40;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 41;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 42;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 43;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 44;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 45;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 46;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 47;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 48;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 49;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 50;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 51;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 52;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 53;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 54;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 55;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 56;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 57;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 58;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 59;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 60;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 61;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 62;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 63;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 64;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 65;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 66;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 67;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 68;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 69;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 70;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 71;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 72;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 73;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 74;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 75;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 76;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 77;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 78;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 79;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 80;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 81;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 82;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 83;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 84;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 85;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 86;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 87;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 88;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 89;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 90;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 91;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 92;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 93;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 94;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 95;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 96;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 97;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 98;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 99;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 100;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 101;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 102;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 103;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 104;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 105;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 106;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 107;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 108;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 109;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 110;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 111;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 112;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 113;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 114;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 115;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 116;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 117;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 118;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 119;"><ion-icon name="heart-outline"></ion-icon></span>
+                    <span style="--i: 120;"><ion-icon name="heart-outline"></ion-icon></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="changingAnimation">
+    <div class="animationBox">
+        <span style="--i: 1;"></span>
+        <span style="--i: 2;"></span>
+        <span style="--i: 3;"></span>
+        <span style="--i: 4;"></span>
+        <span style="--i: 5;"></span>
+        <span style="--i: 6;"></span>
+        <span style="--i: 7;"></span>
+        <span style="--i: 8;"></span>
+        <span style="--i: 9;"></span>
+        <span style="--i: 10;"></span>
+        <span style="--i: 11;"></span>
+        <span style="--i: 12;"></span>
+        <span style="--i: 13;"></span>
+        <span style="--i: 14;"></span>
+        <span style="--i: 15;"></span>
+        <span style="--i: 16;"></span>
+        <span style="--i: 17;"></span>
+        <span style="--i: 18;"></span>
+        <span style="--i: 19;"></span>
+        <span style="--i: 20;"></span>
+        <span style="--i: 21;"></span>
+        <span style="--i: 22;"></span>
+        <span style="--i: 23;"></span>
+        <span style="--i: 24;"></span>
+        <span style="--i: 25;"></span>
+        <span style="--i: 26;"></span>
+        <span style="--i: 27;"></span>
+        <span style="--i: 28;"></span>
+        <span style="--i: 29;"></span>
+        <span style="--i: 30;"></span>
+        <span style="--i: 31;"></span>
+        <span style="--i: 32;"></span>
+        <span style="--i: 33;"></span>
+        <span style="--i: 34;"></span>
+        <span style="--i: 35;"></span>
+        <span style="--i: 36;"></span>
+        <span style="--i: 37;"></span>
+        <span style="--i: 38;"></span>
+        <span style="--i: 39;"></span>
+        <span style="--i: 40;"></span>
+        <span style="--i: 41;"></span>
+        <span style="--i: 42;"></span>
+        <span style="--i: 43;"></span>
+        <span style="--i: 44;"></span>
+        <span style="--i: 45;"></span>
+        <span style="--i: 46;"></span>
+        <span style="--i: 47;"></span>
+        <span style="--i: 48;"></span>
+        <span style="--i: 49;"></span>
+        <span style="--i: 50;"></span>
+        <span style="--i: 51;"></span>
+        <span style="--i: 52;"></span>
+        <span style="--i: 53;"></span>
+        <span style="--i: 54;"></span>
+        <span style="--i: 55;"></span>
+        <span style="--i: 56;"></span>
+        <span style="--i: 57;"></span>
+        <span style="--i: 58;"></span>
+        <span style="--i: 59;"></span>
+        <span style="--i: 60;"></span>
+        <span style="--i: 61;"></span>
+        <span style="--i: 62;"></span>
+        <span style="--i: 63;"></span>
+        <span style="--i: 64;"></span>
+        <span style="--i: 65;"></span>
+        <span style="--i: 66;"></span>
+        <span style="--i: 67;"></span>
+        <span style="--i: 68;"></span>
+        <span style="--i: 69;"></span>
+        <span style="--i: 70;"></span>
+        <span style="--i: 71;"></span>
+        <span style="--i: 72;"></span>
+        <span style="--i: 73;"></span>
+        <span style="--i: 74;"></span>
+        <span style="--i: 75;"></span>
+        <span style="--i: 76;"></span>
+        <span style="--i: 77;"></span>
+        <span style="--i: 78;"></span>
+        <span style="--i: 79;"></span>
+        <span style="--i: 80;"></span>
+        <span style="--i: 81;"></span>
+        <span style="--i: 82;"></span>
+        <span style="--i: 83;"></span>
+        <span style="--i: 84;"></span>
+        <span style="--i: 85;"></span>
+        <span style="--i: 86;"></span>
+        <span style="--i: 87;"></span>
+        <span style="--i: 88;"></span>
+        <span style="--i: 89;"></span>
+        <span style="--i: 90;"></span>
+        <span style="--i: 91;"></span>
+        <span style="--i: 92;"></span>
+        <span style="--i: 93;"></span>
+        <span style="--i: 94;"></span>
+        <span style="--i: 95;"></span>
+        <span style="--i: 96;"></span>
+        <span style="--i: 97;"></span>
+        <span style="--i: 98;"></span>
+        <span style="--i: 99;"></span>
+        <span style="--i: 100;"></span>
+        <span style="--i: 101;"></span>
+        <span style="--i: 102;"></span>
+        <span style="--i: 103;"></span>
+        <span style="--i: 104;"></span>
+        <span style="--i: 105;"></span>
+        <span style="--i: 106;"></span>
+        <span style="--i: 107;"></span>
+        <span style="--i: 108;"></span>
+        <span style="--i: 109;"></span>
+        <span style="--i: 110;"></span>
+        <span style="--i: 111;"></span>
+        <span style="--i: 112;"></span>
+        <span style="--i: 113;"></span>
+        <span style="--i: 114;"></span>
+        <span style="--i: 115;"></span>
+        <span style="--i: 116;"></span>
+        <span style="--i: 117;"></span>
+        <span style="--i: 118;"></span>
+        <span style="--i: 119;"></span>
+        <span style="--i: 120;"></span>
+        <span style="--i: 121;"></span>
+        <span style="--i: 122;"></span>
+        <span style="--i: 123;"></span>
+        <span style="--i: 124;"></span>
+        <span style="--i: 125;"></span>
+        <span style="--i: 126;"></span>
+        <span style="--i: 127;"></span>
+        <span style="--i: 128;"></span>
+        <span style="--i: 129;"></span>
+        <span style="--i: 130;"></span>
+        <span style="--i: 131;"></span>
+        <span style="--i: 132;"></span>
+        <span style="--i: 133;"></span>
+        <span style="--i: 134;"></span>
+        <span style="--i: 135;"></span>
+        <span style="--i: 136;"></span>
+        <span style="--i: 137;"></span>
+        <span style="--i: 138;"></span>
+        <span style="--i: 139;"></span>
+        <span style="--i: 140;"></span>
+        <span style="--i: 141;"></span>
+        <span style="--i: 142;"></span>
+        <span style="--i: 143;"></span>
+        <span style="--i: 144;"></span>
+        <span style="--i: 145;"></span>
+        <span style="--i: 146;"></span>
+        <span style="--i: 147;"></span>
+        <span style="--i: 148;"></span>
+        <span style="--i: 149;"></span>
+        <span style="--i: 150;"></span>
+        <span style="--i: 151;"></span>
+        <span style="--i: 152;"></span>
+        <span style="--i: 153;"></span>
+        <span style="--i: 154;"></span>
+        <span style="--i: 155;"></span>
+        <span style="--i: 156;"></span>
+        <span style="--i: 157;"></span>
+        <span style="--i: 158;"></span>
+        <span style="--i: 159;"></span>
+        <span style="--i: 160;"></span>
+        <span style="--i: 161;"></span>
+        <span style="--i: 162;"></span>
+        <span style="--i: 163;"></span>
+        <span style="--i: 164;"></span>
+        <span style="--i: 165;"></span>
+        <span style="--i: 166;"></span>
+        <span style="--i: 167;"></span>
+        <span style="--i: 168;"></span>
+        <span style="--i: 169;"></span>
+        <span style="--i: 170;"></span>
+        <span style="--i: 171;"></span>
+        <span style="--i: 172;"></span>
+        <span style="--i: 173;"></span>
+        <span style="--i: 174;"></span>
+        <span style="--i: 175;"></span>
+        <span style="--i: 176;"></span>
+        <span style="--i: 177;"></span>
+        <span style="--i: 178;"></span>
+        <span style="--i: 179;"></span>
+        <span style="--i: 180;"></span>
+    </div>
+</div>
+
+<div id="userGuide" class="userGuide">
+    <div class="userGuideTitle">
+        It is easy to use, just be curious ;D
+    </div>
+</div>
+
+<div id="contact" class="contact">
+    <div class="contactTitle">
+        CONTACT ME!
+    </div>
+</div>
+
+<footer>
+
+</footer>
+<script>
+
+</script>
+<script src="homepage.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
