@@ -93,6 +93,11 @@ def delete_animation():
 
 
 @application.route("/")
+def authentication():
+    return render_template("index.html")
+
+
+@application.route("/app")
 def index():
     authenticated = 'user_id' in session  # Check if 'user_id' exists in the session
     if authenticated:
@@ -115,9 +120,9 @@ def index():
             for animation in savedAnimations
         ]
 
-        return render_template("appMain.html", savedAnimations=savedAnimations_dict, authenticated=authenticated, username=username)
+        return render_template("app.html", savedAnimations=savedAnimations_dict, authenticated=authenticated, username=username)
 
-    return render_template("appMain.html", savedAnimations=None, authenticated=authenticated)
+    return render_template("app.html", savedAnimations=None, authenticated=authenticated)
 
 
 @application.route("/authentication")
