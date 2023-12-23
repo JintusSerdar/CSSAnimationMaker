@@ -115,9 +115,9 @@ def index():
             for animation in savedAnimations
         ]
 
-        return render_template("app.html", savedAnimations=savedAnimations_dict, authenticated=authenticated, username=username)
+        return render_template("appMain.html", savedAnimations=savedAnimations_dict, authenticated=authenticated, username=username)
 
-    return render_template("app.html", savedAnimations=None, authenticated=authenticated)
+    return render_template("appMain.html", savedAnimations=None, authenticated=authenticated)
 
 
 @application.route("/authentication")
